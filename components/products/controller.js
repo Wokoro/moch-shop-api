@@ -36,6 +36,41 @@ class ProductController {
       next(e);
     }
   }
+
+  /**
+ * @description - Function to delete a lready existing products
+ *
+ * @param {object} req - HTTP request object.
+ *
+ * @param {object} res - HTTP response object.
+ *
+ * @param {object} next - Function to pass control to next function.
+ *
+ * @return {void} - No return value
+ */
+  async deleteProduct(req, res, next) {
+    const {
+      body: { user: { isadmin } },
+      params: { product_id }
+    } = req;
+
+    if (!isadmin) {
+      return sendErrorMessage(res, 401, 'User Unauthorized');
+    }
+
+    const product = await repository.getOne({ uuid: product_id });
+
+    if (!product) {
+      return sendErrorMessage(res, 404, "Product doesn't exist");
+    }
+
+    try {
+      await repository.delete(product_id);
+      sendSuccessMessage(res, 200, 'Deleted product successfully');
+    } catch (e) {
+      next(e);
+    }
+  }
 }
 
 export default new ProductController();

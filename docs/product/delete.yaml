@@ -1,0 +1,60 @@
+paths:
+  /api/v1/product/{product_uuid}:
+    security:
+      - bearerAuth: []
+    delete:
+      summary: Admin product deletion endpoint
+      tags:
+        - Product
+      operationId: deleteProduct
+      produces:
+        - application/json
+      parameters:
+        - name: "Authorization"
+          in: "header"
+          required: false
+          default: "Bearer {token}"
+          type: "string"
+
+        - name: product_uuid
+          in: path
+          type: string
+          required: true
+          summary: "Products's name"
+
+      responses:
+        200:
+          description: Successful product creation
+          content:
+            application/json
+          schema:
+            example:
+              status: "sucess"
+              data: "Deleted product successfully"
+        401:
+          description: Unauthorized Access
+          content:
+            application/json
+          schema:
+            example:
+              status: "error"
+              error: "Authorization Failed, please login is required"
+
+        404:
+          description: Uknown product
+          content:
+            application/json
+          schema:
+            example:
+              status: "error"
+              error: "Product doesn't exist"
+
+        406:
+          description: Unacceptable inputs
+          content:
+            application/json
+          schema:
+            example:
+              status: "error"
+              error:
+                - product_id: "Invalid product uuid"
