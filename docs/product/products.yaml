@@ -1,0 +1,106 @@
+paths:
+  /api/v1/products:
+    security:
+      - bearerAuth: []
+    get:
+      summary: Viewing all products endpoint
+      tags:
+        - Product
+      operationId: getProducts
+      produces:
+        - application/json
+      responses:
+        200:
+          description: Successful return of products
+          content:
+            application/json
+          schema:
+            example:
+              status: "success"
+              data:
+                - uuid: "2b5199f6-c714-47c9-b9fd-2a94b66773eb"
+                  name: "iphone"
+                  user_uuid: "341007b4-e254-48a5-9cf6-f254bed78310"
+                  description: "A very powerful phone with high picture quality"
+                  category: "electronics"
+                  price: 20000
+                  imageUrl: "http://iphone_x.com/iphone.png"
+                  inStock: true
+                  createdAt: "2020-02-19T01:17:13.838Z"
+                  updatedAt: "2020-02-19T01:17:13.838Z"
+
+                - uuid: "7435abde-7ca0-47fd-b538-f4df145f32fe"
+                  name: "Mouse"
+                  user_uuid: "138eab76-bf3d-48be-9dc7-52136376f04d"
+                  description: "Bluethoot powered mouse"
+                  category: "electronics"
+                  price: 4880
+                  imageUrl: "http://softworld/mouse.png"
+                  inStock: true
+                  createdAt: "2020-02-18T14:38:46.306Z"
+                  updatedAt: "2020-02-18T14:38:46.306Z"
+
+                - uuid: "1d8d6cda-af05-4629-ab5f-e116667de7b7"
+                  name: "Desktop"
+                  user_uuid: "138eab76-bf3d-48be-9dc7-52136376f04d"
+                  description: "Complete Desktop"
+                  category: "electronics"
+                  price: 94000
+                  imageUrl: "http://softworld/desktop.png"
+                  inStock: true
+                  createdAt: "2020-02-18T14:38:46.306Z"
+                  updatedAt: "2020-02-18T14:38:46.306Z"
+
+                - uuid: "986643d1-02fd-426d-8d0f-81f2e336685e"
+                  name: "Samsung J5"
+                  user_uuid: "138eab76-bf3d-48be-9dc7-52136376f04d"
+                  description: "Samsung phone with high quality camera"
+                  category: "electronics"
+                  price: 50000
+                  imageUrl: "http://softworld/phone.png"
+                  inStock: true
+                  createdAt: "2020-02-18T14:38:46.306Z"
+                  updatedAt: "2020-02-18T14:38:46.306Z"
+
+                - uuid: "cf1a22ee-cebb-40e7-bafc-6d6f86943050"
+                  name: "Polo shirts"
+                  user_uuid: "138eab76-bf3d-48be-9dc7-52136376f04d"
+                  description: "Body fitted shirts"
+                  category: "clothes"
+                  price: 2000
+                  imageUrl: "http://softworld/shirts.png"
+                  inStock: true
+                  createdAt: "2020-02-18T14:38:46.306Z"
+                  updatedAt: "2020-02-18T14:38:46.306Z"
+
+                - uuid: "1d20495d-d056-40d2-bb75-32f1cae8c216"
+                  name: "Mega microphone"
+                  user_uuid: "138eab76-bf3d-48be-9dc7-52136376f04d"
+                  description: "257KHZ Microphone"
+                  category: "electronics"
+                  price: 20000
+                  imageUrl: "http://softworld/megaphone.png"
+                  inStock: true
+                  createdAt: "2020-02-18T14:38:46.306Z"
+                  updatedAt: "2020-02-18T14:38:46.306Z"
+
+                - uuid: "72fc2494-88a0-4f75-a341-f39a968477b9"
+                  name: "Canon Camera"
+                  user_uuid: "138eab76-bf3d-48be-9dc7-52136376f04d"
+                  description: "500px ultra high quality camera"
+                  category: "electronics"
+                  price: 20000
+                  imageUrl: "http://softworld/megacam.png"
+                  inStock: true
+                  createdAt: "2020-02-18T14:38:46.306Z"
+                  updatedAt: "2020-02-18T14:38:46.306Z"
+
+
+        204:
+          description: No content available
+          content:
+            application/json
+          schema:
+            example:
+              status: "success"
+              data: "No products available"
