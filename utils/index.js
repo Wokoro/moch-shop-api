@@ -2,8 +2,11 @@
  * @author Wokoro Douye Samuel
  */
 
+/* eslint-disable arrow-body-style */
+
 import dotenv from 'dotenv';
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 import { validationResult } from 'express-validator';
 
 dotenv.config();
@@ -104,6 +107,19 @@ export const filterUserInfo = (
 export const encryptPassword = password => bcrypt.hashSync(password, 10);
 
 /**
+ * @description - Function to decrypt user password
+ *
+ * @param {string} password - User's plain password to encrypt
+ *
+ * @param {string} hashPassword - User's plain password to encrypt
+ *
+ * @returns {boolean} - Returns the true or false
+ */
+export const decryptPassword = (password, hashPassword) => {
+  return bcrypt.compareSync(password, hashPassword);
+};
+
+/**
  * @description - Function to return all validation errors
  *
  * @param {object} req - HTTP request object
@@ -121,4 +137,15 @@ export const generateErrorReport = (req, res, next) => {
     return sendErrorMessage(res, 406, error);
   }
   return next();
+};
+
+/**
+ * @description - Function to generate user token
+ *
+ * @param {object} payload - User's details to generate token with
+ *
+ * @returns {string} - Returns generated token
+ */
+export const generateToken = (payload) => {
+  return jwt.sign(payload, process.env.TOKEN_KEY);
 };

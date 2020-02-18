@@ -1,25 +1,13 @@
 paths:
-  /api/v1/signup:
+  /api/v1/signin:
     post:
-      summary: User signup endpoint
+      summary: User signin endpoint
       tags:
         - User
-      operationId: createUser
+      operationId: signinUser
       produces:
         - application/json
       parameters:
-        - name: firstname
-          in: formData
-          type: string
-          required: true
-          summary: "User's firstname"
-
-        - name: lastname
-          in: formData
-          type: string
-          required: true
-          summary: "User's lastname"
-
         - name: email
           in: formData
           type: string
@@ -33,7 +21,7 @@ paths:
           summary: "User's passowrd"
       responses:
         200:
-          description: Successful user signup
+          description: Successful user signin
           content:
             application/json
           schema:
@@ -46,6 +34,7 @@ paths:
                 isadmin: false
                 createdAt: "2020-02-19T01:17:13.838Z"
                 updatedAt: "2020-02-19T01:17:13.838Z"
+                token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRvdXllNUBnbWFpbC5jb20iLCJpc2FkbWluIjpmYWxzZSwiaWF0IjoxNTgyMDY3NjU3fQ.3SUoBFM49u3UGy1SxfnDOiX4EWhhAgOxsgUX7D6_7M8"
 
         406:
           description: Unacceptable inputs
@@ -55,15 +44,15 @@ paths:
             example:
               status: "error"
               error:
-                - firstname: "Firstname must be valid"
-                - lastname: "Lastname must be valid"
                 - email: "Email must be valid"
+                - password: "Password must be valid"
 
-        409:
-          description: Conflicting accounts
+        401:
+          description: Unauthorized client
           content:
             application/json
           schema:
             example:
               status: "error"
-              error: "User already exists"
+              error: "User name or password incorrect"
+

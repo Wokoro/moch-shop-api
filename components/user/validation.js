@@ -5,7 +5,7 @@
 import { check } from 'express-validator';
 import { generateErrorReport } from '../../utils';
 
-export default [
+export const signupValidations = [
   check('firstname', 'Firstname must be valid')
     .escape()
     .trim()
@@ -27,6 +27,21 @@ export default [
     .escape()
     .trim()
     .exists(),
+
+  generateErrorReport
+];
+
+export const signinValidations = [
+  check('email', 'Email must be valid')
+    .escape()
+    .trim()
+    .isEmail(),
+
+  check('password', 'Password must be valid')
+    .escape()
+    .trim()
+    .not()
+    .isEmpty(),
 
   generateErrorReport
 ];
