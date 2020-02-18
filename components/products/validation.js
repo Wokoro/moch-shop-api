@@ -52,7 +52,7 @@ export const productValidations = [
   generateErrorReport
 ];
 
-export const productDeleteValidations = [
+export const productUUIDValidation = [
   check('product_id', 'Must not be empty')
     .trim()
     .escape()
