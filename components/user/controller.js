@@ -60,21 +60,21 @@ class UserController {
   * @return {void} - No return value
   */
   async signIn({ body }, res, next) {
-    const { email, password: planPwd } = body;
+    const { email: strEmail, password: planPwd } = body;
 
     try {
-      const user = await repository.getOne({ email });
+      const user = await repository.getOne({ email: strEmail });
 
       if (!user) {
         return sendErrorMessage(res, 401, 'User name or password incorrect');
       }
 
       const { dataValues } = user;
-      const { password, isadmin, email: strEmail } = dataValues;
+      const { password, isadmin, email } = dataValues;
       const result = decryptPassword(planPwd, password);
 
       if (result) {
-        const token = generateToken({ strEmail, isadmin });
+        const token = generateToken({ email, isadmin });
         const response = filterUserInfo(dataValues);
         response.token = token;
         return sendSuccessMessage(res, 200, response);

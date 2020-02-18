@@ -12,7 +12,5 @@ module.exports = {
     isadmin: true
   }], {}),
 
-  down: (queryInterface) => {
-    queryInterface.bulkDelete('Users', null, {});
-  }
+  down: queryInterface => queryInterface.bulkDelete('Users', null, {})
 };
