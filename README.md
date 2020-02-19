@@ -10,6 +10,18 @@ Moch Shop is built with Node.js which is a backend technology and [Express](http
 
 Moch Shop requires the installation of [Node.js](http://nodejs.org) and [npm](https://www.npmjs.com/) (Node Package Manager). The backend is written in ES2015 so [Babel](https://babeljs.io/) is needed to transpile it.
 
+#### Technologies
+
+- [Es6+ Javascript](https://www.ecma-international.org/ecma-262/9.0/index.html)
+
+- [Node/Express](https://nodejs.org/en/)
+
+- [NPM](npmjs.com)
+
+- [PostgreSQL](https://www.postgresql.org/)
+
+- [Swagger:](https://swagger.io/)
+
 ## Installation
 * Clone or download this repository
 * Install dependencies
@@ -21,6 +33,17 @@ npm install
 npm start
 ```
 
+### Contributors
+
+##### PO
+
+- [zicli-synergy](https://github.com/zicli-synergy)
+
+##### Team Members
+
+- [Wokoro Douye Samuel](https://github.com/Wokoro)
+
+
 ## Usage
 Moch Shop API is hosted on Heroku [here](https://dashboard.heroku.com/apps/moch-shop/api/v1/docs). Click on the link to access Moch Shop API docs easily.
 
@@ -28,6 +51,7 @@ To use the API, make requests to the endpoints supported by Moch Shop and get yo
 
 ## Features
 ### Required Features
+
 1. User can Sign Up.
 
 2. User can Sign in.
@@ -46,10 +70,27 @@ To use the API, make requests to the endpoints supported by Moch Shop and get yo
 
 9. User can delete a product from his/her cart.
 
+## Endpoints
+
+
+| Request Type | Function                                                                                      | Access Level                               | Enpoint                     |
+| ------------ | --------------------------------------------------------------------------------------------- | ------------------------------------------ | --------------------------- |
+| POST         | Endpoint for user signup                                                                                      | User                                       | /api/v1/signup                                 |                    |
+| POST         | Endpoint for user signin                                                                                      | User                                       | /api/v1/signin                                |                    |
+| POST         | Endpoint for product creation by admin                                                                                 | Admin                                      | /api/v1/product                                      |                    |
+| GET          | Endpoint for view all available products on the platform                                                                                | User/ Admin                                       | /api/v1/products                              |                    |
+| PUT          | Endpoint for updating specific product detials by admin                                                                               | Admin                                       | /api/v1/products/:product_id                              |                    |
+| DELETE          | Endpoint for deleting specific product detail                                                                              | Admin                                       | /api/v1/products/:product_id                              |                    |
 ## Tests
+
 ```Bash
 npm test
 ```
+#### Admin user details
+
+email: johndoe@yahoo.com
+
+password: required
 
 ## License
 Moch Shop is available under the MIT license. Visit [LICENSE](https://github.com/Wokoro/moch-shop-api/blob/master/LICENSE.md) for more details.
