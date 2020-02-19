@@ -93,10 +93,10 @@ export const sendErrorMessage = (res, code, error) => res.status(code).send({
  */
 export const filterUserInfo = (
   {
-    firstname, lastname, email, isadmin, createdAt, updatedAt
+    uuid, firstname, lastname, email, is_admin, created_at, updated_at
   }
 ) => ({
-  firstname, lastname, email, isadmin, createdAt, updatedAt
+  uuid, firstname, lastname, email, is_admin, created_at, updated_at
 });
 
 /**
@@ -193,7 +193,7 @@ export const passToken = async (req, res, next) => {
         );
       }
       if (issureToken) {
-        req.body.user = user.dataValues;
+        req.body.user = user.get();
         req.body.token = token;
         return next();
       }
