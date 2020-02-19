@@ -1,0 +1,62 @@
+paths:
+  /api/v1/cart/:
+    security:
+      - bearerAuth: []
+    get:
+      summary: Endpoint for users to view all product in cart
+      tags:
+        - Cart
+      operationId: getCart
+      produces:
+        - application/json
+      parameters:
+        - name: "Authorization"
+          in: "header"
+          required: false
+          default: "Bearer {token}"
+          type: "string"
+
+      responses:
+        200:
+          description: Successfully added product to cart.
+          content:
+            application/json
+          schema:
+            example:
+              status: "sucess"
+              data:
+                - uuid: "2b5199f6-c714-47c9-b9fd-2a94b66773eb"
+                  user_uuid: "341007b4-e254-48a5-9cf6-f254bed78310"
+                  product_uuid: "704684e4-f463-4c01-a2af-9ab69b353f75"
+                  created_at: "2020-02-19T01:17:13.838Z"
+                  updated_at: "2020-02-19T01:17:13.838Z"
+
+                - uuid: "cdf813e9-7dcf-497c-8ed6-fa8611d372be"
+                  user_uuid: "e0634609-3140-4393-a57c-79171a18201c"
+                  product_uuid: "704684e4-f463-4c01-a2af-9ab69b353f75"
+                  created_at: "2020-02-19T20:10:28.884Z"
+                  updated_at: "2020-02-19T20:10:28.884Z"
+
+                - uuid: "f9110389-485f-4a7d-bc43-9216fea5caab"
+                  user_uuid: "e0634609-3140-4393-a57c-79171a18201c"
+                  product_uuid: "704684e4-f463-4c01-a2af-9ab69b353f75"
+                  created_at: "2020-02-19T20:10:26.433Z"
+                  updated_at: "2020-02-19T20:10:26.433Z"
+
+        401:
+          description: Empty token field
+          content:
+            application/json
+          schema:
+            example:
+              status: "error"
+              error: "Authorization, Failed please login is required"
+
+        406:
+          description: Invalid user token
+          content:
+            application/json
+          schema:
+            example:
+              status: "error"
+              error: "Invalid token"

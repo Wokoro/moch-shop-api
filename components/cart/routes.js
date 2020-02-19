@@ -11,5 +11,10 @@ export default [
     path: '/cart/:product_id',
     method: 'post',
     handlers: [...productUUIDValidation, passToken, controller.addToCart]
+  },
+  {
+    path: '/cart',
+    method: 'get',
+    handlers: [passToken, controller.viewCartProducts]
   }
 ];
