@@ -5,7 +5,8 @@ import uuid from 'uuid/v4';
 const admin_uuid = '138eab76-bf3d-48be-9dc7-52136376f04d';
 
 module.exports = {
-  up: async (queryInterface, Sequelize) => queryInterface.bulkInsert('Products', [
+  up: async (queryInterface, Sequelize) => {
+  return queryInterface.bulkInsert('Products', [
     {
       uuid: uuid(),
       user_uuid: admin_uuid,
@@ -186,7 +187,7 @@ module.exports = {
       created_at: Sequelize.literal('NOW()'),
       updated_at: Sequelize.literal('NOW()')
     }
-  ], {}),
+  ], {})},
 
   down: queryInterface => queryInterface.bulkDelete('Products', null, {})
 };

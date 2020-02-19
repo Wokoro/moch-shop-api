@@ -1,0 +1,56 @@
+paths:
+  /api/v1/cart/{product_id}:
+    security:
+      - bearerAuth: []
+    post:
+      summary: Endpoint for users to add product to cart
+      tags:
+        - Cart
+      operationId: createCart
+      produces:
+        - application/json
+      parameters:
+        - name: "Authorization"
+          in: "header"
+          required: false
+          default: "Bearer {token}"
+          type: "string"
+
+        - name: product_id
+          in: path
+          type: string
+          required: true
+          summary: "Products's uuid"
+
+      responses:
+        200:
+          description: Successfully added product to cart.
+          content:
+            application/json
+          schema:
+            example:
+              status: "sucess"
+              data:
+                uuid: "2b5199f6-c714-47c9-b9fd-2a94b66773eb"
+                user_uuid: "341007b4-e254-48a5-9cf6-f254bed78310"
+                product_uuid: "704684e4-f463-4c01-a2af-9ab69b353f75"
+                created_at: "2020-02-19T01:17:13.838Z"
+                updated_at: "2020-02-19T01:17:13.838Z"
+
+        401:
+          description: Empty token field
+          content:
+            application/json
+          schema:
+            example:
+              status: "error"
+              error: "Authorization Failed, please login is required"
+
+        406:
+          description: Invalid user token
+          content:
+            application/json
+          schema:
+            example:
+              status: "error"
+              error: "Invalid token"
