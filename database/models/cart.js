@@ -24,12 +24,12 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
   }, {
-      timestamps: true,
-      underscoreAll: true,
-      underscore: true,
-      createdAt: 'created_at',
-      updatedAt: 'updated_at'
-    });
+    timestamps: true,
+    underscoreAll: true,
+    underscore: true,
+    createdAt: 'created_at',
+    updatedAt: 'updated_at'
+  });
   Cart.associate = (models) => {
     Cart.belongsTo(
       models.User, { foreignKey: 'user_uuid' }

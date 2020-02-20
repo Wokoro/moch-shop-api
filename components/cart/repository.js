@@ -37,12 +37,27 @@ class CartRepository {
   /**
    * @description - Function to get all user's cart product(s).
    *
-   * @param {string} param0 - User's uuid
+   * @param {object} condition - Condition to find cart product
+   *
+   * @param {string} include - Optional fields to add to cart.
    *
    * @returns {object} - Returns a promise for cart products.
    */
-  async getAll(condition={}, include='') {
-    return this.model.findAll({where: condition, include});
+  async getAll(condition = {}, include = '') {
+    return this.model.findAll({ where: condition, include });
+  }
+
+  /**
+   * @description - Function to get one cart details.
+   *
+   * @param {object} condition - Condition to find cart product
+   *
+   * @param {string} include - Optional fields to add to cart.
+   *
+   * @returns {object} - Returns a promise for cart products.
+   */
+  async getOne(condition = {}, include = '') {
+    return this.model.findOne({ where: condition, include });
   }
 }
 

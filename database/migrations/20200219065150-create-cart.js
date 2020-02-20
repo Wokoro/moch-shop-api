@@ -8,7 +8,6 @@ module.exports = {
       defaultValue: Sequelize.UUIDV4
     },
     user_uuid: {
-      allowNull: false,
       type: Sequelize.UUID,
       references: {
         model: 'Users',
@@ -16,7 +15,6 @@ module.exports = {
       }
     },
     product_uuid: {
-      allowNull: false,
       type: Sequelize.UUID,
       references: {
         model: 'Products',
@@ -32,5 +30,5 @@ module.exports = {
       type: Sequelize.DATE
     }
   }),
-  down: (queryInterface) => queryInterface.dropTable('Carts')
+  down: queryInterface => queryInterface.dropTable('Carts')
 };

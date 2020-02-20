@@ -24,8 +24,15 @@ module.exports = (sequelize, DataTypes) => {
     createdAt: 'created_at',
     updatedAt: 'updated_at'
   });
-  Product.associate = function (models) {
-    Product.belongsToMany(models.User, { through: 'Carts', foreignKey: 'product_uuid', as: 'users' });
+  Product.associate = (models) => {
+    Product.belongsToMany(
+      models.User,
+      {
+        through: 'Carts',
+        foreignKey: 'product_uuid',
+        as: 'users'
+      }
+    );
   };
   return Product;
 };
