@@ -12,7 +12,6 @@
     "lint": "eslint ./**/*.js --fix",
     "lint-md": "remark . --output",
     "test": " nyc mocha ./tests/index.js --exit",
-    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "migrate": "sequelize db:migrate",
     "migrate:undo": "sequelize db:migrate:undo:all",
     "seed": "sequelize db:seed:all",
