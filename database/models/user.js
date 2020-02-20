@@ -7,8 +7,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4
     },
-    firstname: DataTypes.STRING,
-    lastname: DataTypes.STRING,
+    firstname: {
+      type: DataTypes.STRING
+    },
+    lastname: {
+      type: DataTypes.STRING
+    },
     isadmin: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
@@ -17,7 +21,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       unique: true
     },
-    password: DataTypes.STRING
+    password: {
+      type: DataTypes.STRING
+    },
+    createdAt: {
+      type: DataTypes.DATE
+    },
+    updatedAt: {
+      type: DataTypes.DATE
+    }
   }, {});
   User.associate = () => {};
   return User;

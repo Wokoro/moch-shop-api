@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "nodemon index.js --exec babel-node",
-    "lint": "eslint ./**/*.js --fix",
+    "lint": "eslint ./**/*.js",
     "lint-md": "remark . --output",
     "test": " nyc mocha ./tests/index.js --exit",
     "migrate": "sequelize db:migrate",

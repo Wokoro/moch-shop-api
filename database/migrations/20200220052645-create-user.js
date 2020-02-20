@@ -24,12 +24,12 @@ module.exports = {
       type: Sequelize.STRING
     },
     createdAt: {
-      allowNull: false,
-      type: Sequelize.DATE
+      type: Sequelize.DATE,
+      defaultValue: Sequelize.literal('Now()')
     },
     updatedAt: {
-      allowNull: false,
-      type: Sequelize.DATE
+      type: Sequelize.DATE,
+      defaultValue: Sequelize.literal('Now()')
     }
   }),
   down: queryInterface => queryInterface.dropTable('Users')

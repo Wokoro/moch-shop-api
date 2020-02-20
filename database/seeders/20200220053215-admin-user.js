@@ -1,5 +1,6 @@
 
 import uuid from 'uuid';
+import { encryptPassword } from '../../utils';
 
 module.exports = {
   up: queryInterface => queryInterface.bulkInsert('Users', [{
@@ -7,7 +8,7 @@ module.exports = {
     firstname: 'John',
     lastname: 'Doe',
     email: 'johndoe@yahoo.com',
-    password: 'required',
+    password: encryptPassword('required'),
     isadmin: true
   }], {}),
 
