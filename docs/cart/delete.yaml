@@ -1,0 +1,51 @@
+paths:
+  /api/v1/cart/{product_id}:
+    security:
+      - bearerAuth: []
+    delete:
+      summary: Endpoint for users to remove product from cart
+      tags:
+        - Cart
+      operationId: deleteCart
+      produces:
+        - application/json
+      parameters:
+        - name: "Authorization"
+          in: "header"
+          required: false
+          default: "Bearer {token}"
+          type: "string"
+
+        - name: product_id
+          in: path
+          type: string
+          required: true
+          summary: "Products's uuid"
+
+      responses:
+        200:
+          description: Successfully added product to cart.
+          content:
+            application/json
+          schema:
+            example:
+              status: "sucess"
+              data: "Product does'nt exist in cart"
+
+        401:
+          description: Empty token field
+          content:
+            application/json
+          schema:
+            example:
+              status: "error"
+              error: "Authorization Failed, please login is required"
+
+        406:
+          description: Invalid user token
+          content:
+            application/json
+          schema:
+            example:
+              status: "error"
+              error: "Invalid token"

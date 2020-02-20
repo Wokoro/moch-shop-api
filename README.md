@@ -77,20 +77,28 @@ To use the API, make requests to the endpoints supported by Moch Shop and get yo
 | ------------ | --------------------------------------------------------------------------------------------- | ------------------------------------------ | --------------------------- |
 | POST         | Endpoint for user signup                                                                                      | User                                       | /api/v1/signup                                 |                    |
 | POST         | Endpoint for user signin                                                                                      | User                                       | /api/v1/signin                                |                    |
+| GET         | Endpoint for user/admin to view products availble on moch-shop platform                                                                                     | User/Admin                                     | /api/v1/products                                |                    |
+| POST         | Endpoint for user to add product to his/her cart                                                                                     | User                                     | /api/v1/cart/:product_id                                |                    |
+| GET         | Endpoint for user to view all products in his/her cart                                                                                     | User                                     | /api/v1/cart                                |                    |
+| DELETE         | Endpoint for user to remove specific product in his/her cart                                                                                     | User                                     | /api/v1/cart/:product_id                               |                    |
 | POST         | Endpoint for product creation by admin                                                                                 | Admin                                      | /api/v1/product                                      |                    |
-| GET          | Endpoint for view all available products on the platform                                                                                | User/ Admin                                       | /api/v1/products                              |                    |
 | PUT          | Endpoint for updating specific product detials by admin                                                                               | Admin                                       | /api/v1/products/:product_id                              |                    |
-| DELETE          | Endpoint for deleting specific product detail                                                                              | Admin                                       | /api/v1/products/:product_id                              |                    |
+| DELETE          | Endpoint for deleting specific product                                                                              | Admin                                       | /api/v1/products/:product_id                              |                    |
+
 ## Tests
 
 ```Bash
 npm test
 ```
-#### Admin user details
+#### Test accounts
+
+```
+ADMIN
 
 email: johndoe@yahoo.com
 
 password: required
+```
 
 ## License
 Moch Shop is available under the MIT license. Visit [LICENSE](https://github.com/Wokoro/moch-shop-api/blob/master/LICENSE.md) for more details.
