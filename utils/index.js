@@ -3,6 +3,8 @@
  */
 
 import dotenv from 'dotenv';
+import bcrypt from 'bcrypt';
+import { validationResult } from 'express-validator';
 
 dotenv.config();
 
@@ -68,3 +70,55 @@ export const sendErrorMessage = (res, code, error) => res.status(code).send({
   status: 'error',
   error
 });
+
+/**
+ * @description - Function to filter user account details
+ *
+ * @param {string} param0 - User's firstname
+ *
+ * @param {string} param1 - User's lastname
+ *
+ * @param {boolean} param2 - User's isadmin
+ *
+ * @param {string} param3 - User's account creation time
+ *
+ * @param {string} param4 - User's account update time
+ *
+ * @returns {object} - Returns filtered user details
+ */
+export const filterUserInfo = (
+  {
+    firstname, lastname, email, isadmin, createdAt, updatedAt
+  }
+) => ({
+  firstname, lastname, email, isadmin, createdAt, updatedAt
+});
+
+/**
+ * @description - Function to encrypt user password
+ *
+ * @param {string} password - User's plain password to encrypt
+ *
+ * @returns {object} - Returns the encrypted password
+ */
+export const encryptPassword = password => bcrypt.hashSync(password, 10);
+
+/**
+ * @description - Function to return all validation errors
+ *
+ * @param {object} req - HTTP request object
+ *
+ * @param {object} res - HTTP response object
+ *
+ * @param {function} next - Function to trigger next function exec.
+ *
+ * @returns {object} - Returns constructed error message
+ */
+export const generateErrorReport = (req, res, next) => {
+  const result = validationResult(req);
+  if (!result.isEmpty()) {
+    const error = result.array().map(e => ({ [e.param]: e.msg }));
+    return sendErrorMessage(res, 406, error);
+  }
+  return next();
+};
