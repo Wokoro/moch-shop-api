@@ -71,6 +71,42 @@ class ProductController {
       next(e);
     }
   }
+
+  /**
+   * @description - Function to update specific product
+   *
+   * @param {object} req - Request body property, with product details.
+   *
+   * @param {object} res - Express response object.
+   *
+   * @param {object} next - Function to pass control to next function.
+   *
+   * @return {void} - No return value
+   */
+  async updateProduct(req, res, next) {
+    const {
+      body: { user: { isadmin } },
+      params: { product_id }
+    } = req;
+
+    if (!isadmin) {
+      return sendErrorMessage(res, 401, 'User Unauthorized');
+    }
+
+    console.log('uuid: ', product_id);
+    const product = await repository.getOne({ uuid: product_id });
+
+    if (!product) {
+      return sendErrorMessage(res, 404, "Product doesn't exist");
+    }
+
+    try {
+      const result = await repository.update(product_id, req.body);
+      sendSuccessMessage(res, 200, result);
+    } catch (e) {
+      next(e);
+    }
+  }
 }
 
 export default new ProductController();

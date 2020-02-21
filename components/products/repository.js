@@ -67,6 +67,31 @@ class ProductRepository {
   }
 
   /**
+   * @description - Function to update product.
+   *
+   * @param {string} uuid - Product's uuid
+   *
+   * @returns {object} - Returns a promise for product creation.
+   */
+  async update(
+    uuid,
+    {
+      name, description, category,
+      price, image_url, in_stock 
+    }
+  ) {
+    const product = await this.getOne({ uuid });
+    return product.update({
+      name,
+      description,
+      category,
+      price,
+      image_url,
+      in_stock,
+    });
+  }
+
+  /**
    * @description - Function get one Products.
    *
    * @param {object} condition - Condition to search for.
