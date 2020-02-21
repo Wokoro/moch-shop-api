@@ -1,4 +1,3 @@
-
 import uuid from 'uuid';
 import { encryptPassword } from '../../utils';
 
@@ -9,7 +8,7 @@ module.exports = {
     lastname: 'Doe',
     email: 'johndoe@yahoo.com',
     password: encryptPassword('required'),
-    isadmin: true
+    is_admin: true
   }], {}),
 
   down: queryInterface => queryInterface.bulkDelete('Users', null, {})
