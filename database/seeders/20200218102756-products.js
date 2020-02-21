@@ -15,8 +15,8 @@ module.exports = {
       price: 23.00,
       image_url: 'http://softworld/shoes.png',
       in_stock: true,
-      createdAt: Sequelize.literal('NOW()'),
-      updatedAt: Sequelize.literal('NOW()')
+      created_at: Sequelize.literal('NOW()'),
+      updated_at: Sequelize.literal('NOW()')
     },
     {
       uuid: uuid(),
@@ -27,8 +27,8 @@ module.exports = {
       price: 4880.00,
       image_url: 'http://softworld/mouse.png',
       in_stock: true,
-      createdAt: Sequelize.literal('NOW()'),
-      updatedAt: Sequelize.literal('NOW()')
+      created_at: Sequelize.literal('NOW()'),
+      updated_at: Sequelize.literal('NOW()')
     },
     {
       uuid: uuid(),
@@ -39,8 +39,8 @@ module.exports = {
       price: 94000.00,
       image_url: 'http://softworld/desktop.png',
       in_stock: true,
-      createdAt: Sequelize.literal('NOW()'),
-      updatedAt: Sequelize.literal('NOW()')
+      created_at: Sequelize.literal('NOW()'),
+      updated_at: Sequelize.literal('NOW()')
     },
     {
       uuid: uuid(),
@@ -51,8 +51,8 @@ module.exports = {
       price: 50000.00,
       image_url: 'http://softworld/phone.png',
       in_stock: true,
-      createdAt: Sequelize.literal('NOW()'),
-      updatedAt: Sequelize.literal('NOW()')
+      created_at: Sequelize.literal('NOW()'),
+      updated_at: Sequelize.literal('NOW()')
     },
     {
       uuid: uuid(),
@@ -63,8 +63,8 @@ module.exports = {
       price: 2000.00,
       image_url: 'http://softworld/shirts.png',
       in_stock: true,
-      createdAt: Sequelize.literal('NOW()'),
-      updatedAt: Sequelize.literal('NOW()')
+      created_at: Sequelize.literal('NOW()'),
+      updated_at: Sequelize.literal('NOW()')
     },
     {
       uuid: uuid(),
@@ -75,8 +75,8 @@ module.exports = {
       price: 20000.00,
       image_url: 'http://softworld/megaphone.png',
       in_stock: true,
-      createdAt: Sequelize.literal('NOW()'),
-      updatedAt: Sequelize.literal('NOW()')
+      created_at: Sequelize.literal('NOW()'),
+      updated_at: Sequelize.literal('NOW()')
     },
     {
       uuid: uuid(),
@@ -87,8 +87,8 @@ module.exports = {
       price: 20000.00,
       image_url: 'http://softworld/megacam.png',
       in_stock: true,
-      createdAt: Sequelize.literal('NOW()'),
-      updatedAt: Sequelize.literal('NOW()')
+      created_at: Sequelize.literal('NOW()'),
+      updated_at: Sequelize.literal('NOW()')
     },
     {
       uuid: uuid(),
@@ -99,8 +99,8 @@ module.exports = {
       price: 23.00,
       image_url: 'http://softworld',
       in_stock: true,
-      createdAt: Sequelize.literal('NOW()'),
-      updatedAt: Sequelize.literal('NOW()')
+      created_at: Sequelize.literal('NOW()'),
+      updated_at: Sequelize.literal('NOW()')
     },
     {
       uuid: uuid(),
@@ -111,8 +111,8 @@ module.exports = {
       price: 23.00,
       image_url: 'http://softworld',
       in_stock: true,
-      createdAt: Sequelize.literal('NOW()'),
-      updatedAt: Sequelize.literal('NOW()')
+      created_at: Sequelize.literal('NOW()'),
+      updated_at: Sequelize.literal('NOW()')
     },
     {
       uuid: uuid(),
@@ -123,8 +123,8 @@ module.exports = {
       price: 23.00,
       image_url: 'http://softworld',
       in_stock: true,
-      createdAt: Sequelize.literal('NOW()'),
-      updatedAt: Sequelize.literal('NOW()')
+      created_at: Sequelize.literal('NOW()'),
+      updated_at: Sequelize.literal('NOW()')
     },
     {
       uuid: uuid(),
@@ -135,8 +135,8 @@ module.exports = {
       price: 23.00,
       image_url: 'http://softworld',
       in_stock: true,
-      createdAt: Sequelize.literal('NOW()'),
-      updatedAt: Sequelize.literal('NOW()')
+      created_at: Sequelize.literal('NOW()'),
+      updated_at: Sequelize.literal('NOW()')
     },
     {
       uuid: uuid(),
@@ -147,8 +147,8 @@ module.exports = {
       price: 23.00,
       image_url: 'http://softworld',
       in_stock: true,
-      createdAt: Sequelize.literal('NOW()'),
-      updatedAt: Sequelize.literal('NOW()')
+      created_at: Sequelize.literal('NOW()'),
+      updated_at: Sequelize.literal('NOW()')
     },
     {
       uuid: uuid(),
@@ -159,8 +159,8 @@ module.exports = {
       price: 23.00,
       image_url: 'http://softworld',
       in_stock: true,
-      createdAt: Sequelize.literal('NOW()'),
-      updatedAt: Sequelize.literal('NOW()')
+      created_at: Sequelize.literal('NOW()'),
+      updated_at: Sequelize.literal('NOW()')
     },
     {
       uuid: uuid(),
@@ -171,8 +171,8 @@ module.exports = {
       price: 23.00,
       image_url: 'http://softworld',
       in_stock: true,
-      createdAt: Sequelize.literal('NOW()'),
-      updatedAt: Sequelize.literal('NOW()')
+      created_at: Sequelize.literal('NOW()'),
+      updated_at: Sequelize.literal('NOW()')
     },
     {
       uuid: uuid(),
@@ -183,8 +183,8 @@ module.exports = {
       price: 23.00,
       image_url: 'http://softworld',
       in_stock: true,
-      createdAt: Sequelize.literal('NOW()'),
-      updatedAt: Sequelize.literal('NOW()')
+      created_at: Sequelize.literal('NOW()'),
+      updated_at: Sequelize.literal('NOW()')
     }
   ], {}),
 

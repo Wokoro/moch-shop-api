@@ -40,12 +40,13 @@ paths:
             example:
               status: "sucess"
               data:
+                uuid: "704684e4-f463-4c01-a2af-9ab69b353f75"
                 firstname: "samuel"
                 lastname: "douye"
                 email: "samueldouye@yahoo.com"
-                isadmin: false
-                createdAt: "2020-02-19T01:17:13.838Z"
-                updatedAt: "2020-02-19T01:17:13.838Z"
+                is_admin: false
+                created_at: "2020-02-19T01:17:13.838Z"
+                updated_at: "2020-02-19T01:17:13.838Z"
 
         406:
           description: Unacceptable inputs

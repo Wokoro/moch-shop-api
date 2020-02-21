@@ -23,9 +23,9 @@ class ProductController {
    * @return {void} - No return value
    */
   async createProduct({ body }, res, next) {
-    const { user: { isadmin } } = body;
+    const { user: { is_admin } } = body;
 
-    if (!isadmin) {
+    if (!is_admin) {
       return sendErrorMessage(res, 401, 'User Unauthorized');
     }
 
@@ -37,7 +37,7 @@ class ProductController {
     }
   }
 
-  /**
+/**
  * @description - Function to delete a lready existing products
  *
  * @param {object} req - HTTP request object.
@@ -50,11 +50,11 @@ class ProductController {
  */
   async deleteProduct(req, res, next) {
     const {
-      body: { user: { isadmin } },
+      body: { user: { is_admin } },
       params: { product_id }
     } = req;
 
-    if (!isadmin) {
+    if (!is_admin) {
       return sendErrorMessage(res, 401, 'User Unauthorized');
     }
 
@@ -85,11 +85,11 @@ class ProductController {
    */
   async updateProduct(req, res, next) {
     const {
-      body: { user: { isadmin } },
+      body: { user: { is_admin } },
       params: { product_id }
     } = req;
 
-    if (!isadmin) {
+    if (!is_admin) {
       return sendErrorMessage(res, 401, 'User Unauthorized');
     }
 

@@ -28,12 +28,13 @@ paths:
             example:
               status: "sucess"
               data:
+                uuid: "e4f476c3-bd8d-49f5-850b-b68e7bcf8bd1"
                 firstname: "samuel"
                 lastname: "douye"
                 email: "samueldouye@yahoo.com"
-                isadmin: false
-                createdAt: "2020-02-19T01:17:13.838Z"
-                updatedAt: "2020-02-19T01:17:13.838Z"
+                is_admin: false
+                created_at: "2020-02-19T01:17:13.838Z"
+                updated_at: "2020-02-19T01:17:13.838Z"
                 token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRvdXllNUBnbWFpbC5jb20iLCJpc2FkbWluIjpmYWxzZSwiaWF0IjoxNTgyMDY3NjU3fQ.3SUoBFM49u3UGy1SxfnDOiX4EWhhAgOxsgUX7D6_7M8"
 
         406:

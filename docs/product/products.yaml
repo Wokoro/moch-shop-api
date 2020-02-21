@@ -24,10 +24,10 @@ paths:
                   description: "A very powerful phone with high picture quality"
                   category: "electronics"
                   price: 20000
-                  imageUrl: "http://iphone_x.com/iphone.png"
-                  inStock: true
-                  createdAt: "2020-02-19T01:17:13.838Z"
-                  updatedAt: "2020-02-19T01:17:13.838Z"
+                  image_url: "http://iphone_x.com/iphone.png"
+                  in_stock: true
+                  created_at: "2020-02-19T01:17:13.838Z"
+                  updated_at: "2020-02-19T01:17:13.838Z"
 
                 - uuid: "7435abde-7ca0-47fd-b538-f4df145f32fe"
                   name: "Mouse"
@@ -35,10 +35,10 @@ paths:
                   description: "Bluethoot powered mouse"
                   category: "electronics"
                   price: 4880
-                  imageUrl: "http://softworld/mouse.png"
-                  inStock: true
-                  createdAt: "2020-02-18T14:38:46.306Z"
-                  updatedAt: "2020-02-18T14:38:46.306Z"
+                  image_url: "http://softworld/mouse.png"
+                  in_stock: true
+                  created_at: "2020-02-18T14:38:46.306Z"
+                  updated_at: "2020-02-18T14:38:46.306Z"
 
                 - uuid: "1d8d6cda-af05-4629-ab5f-e116667de7b7"
                   name: "Desktop"
@@ -46,10 +46,10 @@ paths:
                   description: "Complete Desktop"
                   category: "electronics"
                   price: 94000
-                  imageUrl: "http://softworld/desktop.png"
-                  inStock: true
-                  createdAt: "2020-02-18T14:38:46.306Z"
-                  updatedAt: "2020-02-18T14:38:46.306Z"
+                  image_url: "http://softworld/desktop.png"
+                  in_stock: true
+                  created_at: "2020-02-18T14:38:46.306Z"
+                  updated_at: "2020-02-18T14:38:46.306Z"
 
                 - uuid: "986643d1-02fd-426d-8d0f-81f2e336685e"
                   name: "Samsung J5"
@@ -57,10 +57,10 @@ paths:
                   description: "Samsung phone with high quality camera"
                   category: "electronics"
                   price: 50000
-                  imageUrl: "http://softworld/phone.png"
-                  inStock: true
-                  createdAt: "2020-02-18T14:38:46.306Z"
-                  updatedAt: "2020-02-18T14:38:46.306Z"
+                  image_url: "http://softworld/phone.png"
+                  in_stock: true
+                  created_at: "2020-02-18T14:38:46.306Z"
+                  updated_at: "2020-02-18T14:38:46.306Z"
 
                 - uuid: "cf1a22ee-cebb-40e7-bafc-6d6f86943050"
                   name: "Polo shirts"
@@ -68,10 +68,10 @@ paths:
                   description: "Body fitted shirts"
                   category: "clothes"
                   price: 2000
-                  imageUrl: "http://softworld/shirts.png"
-                  inStock: true
-                  createdAt: "2020-02-18T14:38:46.306Z"
-                  updatedAt: "2020-02-18T14:38:46.306Z"
+                  image_url: "http://softworld/shirts.png"
+                  in_stock: true
+                  created_at: "2020-02-18T14:38:46.306Z"
+                  updated_at: "2020-02-18T14:38:46.306Z"
 
                 - uuid: "1d20495d-d056-40d2-bb75-32f1cae8c216"
                   name: "Mega microphone"
@@ -79,10 +79,10 @@ paths:
                   description: "257KHZ Microphone"
                   category: "electronics"
                   price: 20000
-                  imageUrl: "http://softworld/megaphone.png"
-                  inStock: true
-                  createdAt: "2020-02-18T14:38:46.306Z"
-                  updatedAt: "2020-02-18T14:38:46.306Z"
+                  image_url: "http://softworld/megaphone.png"
+                  in_stock: true
+                  created_at: "2020-02-18T14:38:46.306Z"
+                  updated_at: "2020-02-18T14:38:46.306Z"
 
                 - uuid: "72fc2494-88a0-4f75-a341-f39a968477b9"
                   name: "Canon Camera"
@@ -90,10 +90,10 @@ paths:
                   description: "500px ultra high quality camera"
                   category: "electronics"
                   price: 20000
-                  imageUrl: "http://softworld/megacam.png"
-                  inStock: true
-                  createdAt: "2020-02-18T14:38:46.306Z"
-                  updatedAt: "2020-02-18T14:38:46.306Z"
+                  image_url: "http://softworld/megacam.png"
+                  in_stock: true
+                  created_at: "2020-02-18T14:38:46.306Z"
+                  updated_at: "2020-02-18T14:38:46.306Z"
 
 
         204:

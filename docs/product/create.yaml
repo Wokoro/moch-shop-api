@@ -68,10 +68,10 @@ paths:
                 description: "A very powerful phone, with high picture quality"
                 category: "electronics"
                 price: 20000
-                imageUrl: "http://iphone_x.com/iphone.png"
-                inStock: true
-                createdAt: "2020-02-19T01:17:13.838Z"
-                updatedAt: "2020-02-19T01:17:13.838Z"
+                image_url: "http://iphone_x.com/iphone.png"
+                in_stock: true
+                created_at: "2020-02-19T01:17:13.838Z"
+                updated_at: "2020-02-19T01:17:13.838Z"
 
         401:
           description: Unauthorized Access
