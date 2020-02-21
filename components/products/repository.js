@@ -77,7 +77,7 @@ class ProductRepository {
     uuid,
     {
       name, description, category,
-      price, image_url, in_stock 
+      price, image_url, in_stock
     }
   ) {
     const product = await this.getOne({ uuid });
@@ -102,6 +102,21 @@ class ProductRepository {
    */
   async getOne(condition = {}, include = '') {
     return this.model.findOne(
+      { where: condition, include }
+    );
+  }
+
+  /**
+   * @description - Function get all Products.
+   *
+   * @param {object} condition - Condition to search for.
+   *
+   * @param {string} include - Optional associated field to include
+   *
+   * @returns {object} Returns a promise for product matched.
+   */
+  async getAll(condition = {}, include = '') {
+    return this.model.findAll(
       { where: condition, include }
     );
   }

@@ -107,6 +107,31 @@ class ProductController {
       next(e);
     }
   }
+
+  /**
+   * @description - Function to get all products
+   *
+   * @param {object} req - Request body property, with product details.
+   *
+   * @param {object} res - Express response object.
+   *
+   * @param {object} next - Function to pass control to next function.
+   *
+   * @return {void} - No return value
+   */
+  async getProducts(req, res, next) {
+    try {
+      const result = await repository.getAll();
+
+      if (result.length === 0) {
+        return sendSuccessMessage(res, 204, 'No products available');
+      }
+
+      sendSuccessMessage(res, 200, result);
+    } catch (e) {
+      next(e);
+    }
+  }
 }
 
 export default new ProductController();

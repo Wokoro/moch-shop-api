@@ -27,4 +27,9 @@ export default [
       controller.updateProduct
     ]
   },
+  {
+    path: '/products',
+    method: 'get',
+    handlers: [controller.getProducts]
+  },
 ];
