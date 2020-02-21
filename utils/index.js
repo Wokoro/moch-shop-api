@@ -9,6 +9,8 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { validationResult } from 'express-validator';
 
+import userRepository from '../components/user/repository';
+
 dotenv.config();
 
 /**
@@ -148,4 +150,58 @@ export const generateErrorReport = (req, res, next) => {
  */
 export const generateToken = (payload) => {
   return jwt.sign(payload, process.env.TOKEN_KEY);
+};
+
+/**
+ * @description - Function to check token validity.
+ *
+ * @param {string} token - User's token.
+ *
+ * @returns {boolean} - Returns true for valid token.
+ */
+export const verifyToken = (token) => {
+  return jwt.verify(token, process.env.TOKEN_KEY);
+};
+
+/**
+ * @description - Function to check for valid token
+ *
+ * @param {object} req - HTTP request object.
+ *
+ * @param {object} res - HTTP response object
+ *
+ * @param {object} next - Functon to pass control to next function.
+ *
+ * @returns {void} - Returns nothing.
+ */
+export const passToken = async (req, res, next) => {
+  const rawToken = req.headers.authorization
+    || req.headers['x-access-token']
+    || req.body.token;
+  const token = rawToken ? rawToken.split(' ')[1] : false;
+
+  if (token) {
+    try {
+      const issureToken = verifyToken(token);
+
+      const { email } = issureToken;
+      const user = await userRepository.getOne({ email });
+
+      if (!user) {
+        return sendErrorMessage(
+          res, 401, 'Authorization Failed, please login is required'
+        );
+      }
+      if (issureToken) {
+        req.body.user = user.dataValues;
+        req.body.token = token;
+        return next();
+      }
+    } catch (err) {
+      return sendErrorMessage(res, 406, 'Invalid token');
+    }
+  }
+  return sendErrorMessage(
+    res, 401, 'Authorization Failed, please login is required'
+  );
 };

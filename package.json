@@ -9,13 +9,13 @@
   },
   "scripts": {
     "start": "nodemon index.js --exec babel-node",
-    "lint": "eslint ./**/*.js",
+    "lint": "eslint ./**/*.js --fix",
     "lint-md": "remark . --output",
     "test": " nyc mocha ./tests/index.js --exit",
     "migrate": "sequelize db:migrate",
     "migrate:undo": "sequelize db:migrate:undo:all",
     "seed": "sequelize db:seed:all",
-    "seed:undo": "sequelize db:seed:undo",
+    "seed:undo": "sequelize db:seed:undo:all",
     "build": "babel . --out-dir ./dist --compact --ignore node_modules --minified --no-comments"
   },
   "author": "wokorosamuel@yahoo.com",

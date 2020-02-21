@@ -1,0 +1,94 @@
+paths:
+  /api/v1/product:
+    security:
+      - bearerAuth: []
+    post:
+      summary: Admin product create endpoint
+      tags:
+        - Product
+      operationId: createProduct
+      produces:
+        - application/json
+      parameters:
+        - name: "Authorization"
+          in: "header"
+          required: false
+          default: "Bearer {token}"
+          type: "string"
+
+        - name: name
+          in: formData
+          type: string
+          required: true
+          summary: "Products's name"
+
+        - name: description
+          in: formData
+          type: string
+          required: true
+          summary: "Products's description"
+
+        - name: image_url
+          in: formData
+          type: string
+          required: true
+          summary: "Product's image url"
+
+        - name: category
+          in: formData
+          type: string
+          enum: [clothes, electronics, book]
+          required: true
+          summary: "Product's category"
+
+        - name: in_stock
+          in: formData
+          type: boolean
+          enum: [true, false]
+          required: true
+          summary: "Product's stock state"
+
+        - name: price
+          in: formData
+          type: number
+          required: true
+          summary: "Product's price"
+      responses:
+        200:
+          description: Successful product creation
+          content:
+            application/json
+          schema:
+            example:
+              status: "sucess"
+              data:
+                uuid: "2b5199f6-c714-47c9-b9fd-2a94b66773eb"
+                name: "iphone"
+                user_uuid: "341007b4-e254-48a5-9cf6-f254bed78310"
+                description: "A very powerful phone, with high picture quality"
+                category: "electronics"
+                price: 20000
+                imageUrl: "http://iphone_x.com/iphone.png"
+                inStock: true
+                createdAt: "2020-02-19T01:17:13.838Z"
+                updatedAt: "2020-02-19T01:17:13.838Z"
+
+        401:
+          description: Unauthorized Access
+          content:
+            application/json
+          schema:
+            example:
+              status: "error"
+              error: "Invalid token"
+
+        406:
+          description: Unacceptable inputs
+          content:
+            application/json
+          schema:
+            example:
+              status: "error"
+              error:
+                - name: "Name must contain atleast three letters"
+                - category: "Product category must be valid"

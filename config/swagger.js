@@ -8,6 +8,14 @@ const swaggerDefinition = {
     title: 'Mock Shop',
     version: '1.0.0',
     description: 'REST API Documentation for Mock Shop',
+  },
+  securityDefinitions: {
+    bearerAuth: {
+      type: 'apiKey',
+      scheme: 'bearer',
+      name: 'authorization',
+      in: 'header'
+    }
   }
 };
 
