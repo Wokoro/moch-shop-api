@@ -3,7 +3,7 @@
  */
 
 import controller from './controller';
-import productValidations from './validation';
+import { productValidations, productDeleteValidations } from './validation';
 import { passToken } from '../../utils';
 
 export default [
@@ -11,5 +11,10 @@ export default [
     path: '/product',
     method: 'post',
     handlers: [...productValidations, passToken, controller.createProduct]
+  },
+  {
+    path: '/product/:product_id',
+    method: 'delete',
+    handlers: [...productDeleteValidations, passToken, controller.deleteProduct]
   }
 ];

@@ -5,7 +5,7 @@
 import { check } from 'express-validator';
 import { generateErrorReport } from '../../utils';
 
-export default [
+export const productValidations = [
   check('name', 'Name must be present')
     .isString()
     .trim()
@@ -48,6 +48,20 @@ export default [
     .escape()
     .trim()
     .isBoolean(),
+
+  generateErrorReport
+];
+
+export const productDeleteValidations = [
+  check('product_id', 'Must not be empty')
+    .trim()
+    .escape()
+    .not()
+    .isEmpty(),
+  check('product_id', 'Invalid product uuid')
+    .trim()
+    .escape()
+    .isUUID(),
 
   generateErrorReport
 ];

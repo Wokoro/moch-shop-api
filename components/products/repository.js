@@ -55,6 +55,18 @@ class ProductRepository {
   }
 
   /**
+   * @description - Function to delete product.
+   *
+   * @param {string} uuid - Product's uuid
+   *
+   * @returns {object} - Returns a promise for product creation.
+   */
+  async delete(uuid) {
+    const product = await this.getOne({ uuid });
+    return product.destroy();
+  }
+
+  /**
    * @description - Function get one Products.
    *
    * @param {object} condition - Condition to search for.
@@ -64,7 +76,7 @@ class ProductRepository {
    * @returns {object} Returns a promise for product matched.
    */
   async getOne(condition = {}, include = '') {
-    return this.rep.findOne(
+    return this.model.findOne(
       { where: condition, include }
     );
   }
