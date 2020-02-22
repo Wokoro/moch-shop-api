@@ -37,7 +37,7 @@ class ProductController {
     }
   }
 
-/**
+  /**
  * @description - Function to delete a lready existing products
  *
  * @param {object} req - HTTP request object.

@@ -43,7 +43,7 @@ class ProductRepository {
     price, image_url, in_stock,
     user: { uuid: user_uuid }
   }) {
-    console.log('\n\nuser_uuid: ', user_uuid, '\n\n')
+    console.log('\n\nuser_uuid: ', user_uuid, '\n\n');
     return this.model.create({
       name,
       user_uuid,
