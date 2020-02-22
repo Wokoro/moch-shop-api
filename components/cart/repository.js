@@ -33,6 +33,17 @@ class CartRepository {
   async create({ product_uuid, user: { uuid: user_uuid } }) {
     return this.model.create({ user_uuid, product_uuid });
   }
+
+  /**
+   * @description - Function to get all user's cart product(s).
+   *
+   * @param {string} param0 - User's uuid
+   *
+   * @returns {object} - Returns a promise for cart products.
+   */
+  async getAll(condition={}, include='') {
+    return this.model.findAll({where: condition, include});
+  }
 }
 
 export default new CartRepository();
