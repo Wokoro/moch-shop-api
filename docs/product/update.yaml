@@ -3,10 +3,10 @@ paths:
     security:
       - bearerAuth: []
     put:
-      summary: Admin product deletion endpoint
+      summary: Admin product update endpoint
       tags:
         - Product
-      operationId: deleteProduct
+      operationId: updateProduct
       produces:
         - application/json
       parameters:
