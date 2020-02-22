@@ -16,5 +16,10 @@ export default [
     path: '/cart',
     method: 'get',
     handlers: [passToken, controller.viewCartProducts]
-  }
+  },
+  {
+    path: '/cart/:product_id',
+    method: 'delete',
+    handlers: [...productUUIDValidation, passToken, controller.deleteProduct]
+  },
 ];

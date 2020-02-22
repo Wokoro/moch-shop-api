@@ -13,16 +13,20 @@ module.exports = (sequelize, DataTypes) => {
     is_admin: DataTypes.BOOLEAN,
     password: DataTypes.STRING
   }, {
-      timestamps: true,
-      underscoreAll: true,
-      underscore: true,
-      createdAt: 'created_at',
-      updatedAt: 'updated_at'
-    });
+    timestamps: true,
+    underscoreAll: true,
+    underscore: true,
+    createdAt: 'created_at',
+    updatedAt: 'updated_at'
+  });
   User.associate = (models) => {
     User.belongsToMany(
       models.Product,
-      { foreignKey: 'user_uuid', through: 'Carts', as: 'products' }
+      {
+        foreignKey: 'user_uuid',
+        through: 'Carts',
+        as: 'products'
+      }
     );
   };
   return User;

@@ -6,7 +6,7 @@ const admin_uuid = '138eab76-bf3d-48be-9dc7-52136376f04d';
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-  return queryInterface.bulkInsert('Products', [
+    return queryInterface.bulkInsert('Products', [
     {
       uuid: uuid(),
       user_uuid: admin_uuid,
