@@ -10,7 +10,7 @@ import config from '../config/swagger';
 export default [
   {
     path: '/docs',
-    method: 'use',
+    method: 'get',
     handlers: [swaggerUi.serve, swaggerUi.setup(swaggerJSDoc(config))]
   }
 ];
